@@ -6,7 +6,9 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -16,10 +18,143 @@ html {
 
 body {
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: #e6f3ff;
   font-size: 24px;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+main.container {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #e6f3ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.spacer {
+  height: 120px;
+}
+
+.all-tweets {
+  width: 100%;
+}
+
+.tweet-container {
+  max-width: 90%;
+  margin: 0 auto;
+  border: 3px solid rgb(53, 53, 53);
+  display: flex;
+  flex-direction: column;
+}
+.tweet-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 5px 10px;
+}
+
+h6.name {
+  margin-left: 10px;
+  display: inline;
+  font-size: 1em;
+}
+
+.handle-name {
+  display: flex;
+  align-items: center;
+  margin: 0 20px 0 0;
+}
+
+.tweet-text {
+  width: 95%;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  margin: 0.5em;
+}
+
+.divider {
+  border-top: 3px solid black;
+  height: 3px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.tweet-footer {
+  width: 100%;
+  height: 1em;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0 10px 0;
+}
+
+time {
+  font-size: 0.75em;
+  display: flex;
+  align-items: center;
+  margin-left: 0.5em;
+}
+
+div.icons {
+  font-size: 0.5em;
+  display: flex;
+  align-items: center;
+  margin-right: 0.5em;
+}
+
+article.tweet-container:hover {
+  box-shadow: 5px 5px 5px darkgray;
+}
+
+div.icons > i {
+  margin-right: 3px;
+}
+
+div.icons > i:hover {
+  cursor: pointer;
+  color: rgb(0, 247, 255);
+}
+
+.tweet--body {
+  display: flex;
+  justify-content: center;
+  inline-size: 100%;
+  word-break: break-word;
+  margin-bottom: 10px;
+}
+
+/* desktop view */
+@media (min-width: 1200px) {
+  div.tweeter-body {
+    display: flex;
+    flex-direction: row;
+    max-width: 75em;
+    margin: 0 auto;
+  }
+  header.profile {
+    max-width: 35em;
+    margin: 5em 2em;
+    box-shadow: 0px 3px 5px 0px rgb(48, 48, 48);
+  }
+}
