@@ -1,7 +1,7 @@
 section.new-tweet {
   text-align: left;
-  min-width: 70%;
-  max-width: 80%;
+  width: 90%;
+  margin-top: 2em;
 }
 
 section.new-tweet > h2 {

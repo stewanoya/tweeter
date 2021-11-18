@@ -7,10 +7,10 @@ header.profile {
   align-items: center;
   background-image: url("/images/triangles.png"),
     linear-gradient(-35deg, #babeeb, #7e86e2);
-
   border: 2px solid rgb(66, 66, 66);
 }
 
 .profile--photo {
-  margin-top: 1em;
+  margin-top: 3em;
+  margin-bottom: -1em;
 }
