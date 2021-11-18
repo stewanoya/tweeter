@@ -6,7 +6,7 @@ header.profile {
   justify-content: center;
   align-items: center;
   background-image: url("/images/triangles.png"),
-    linear-gradient(-35deg, #babeeb, #7e86e2);
+    linear-gradient(-35deg, #a8ade6, #6670db);
   border: 2px solid rgb(66, 66, 66);
 }
 
