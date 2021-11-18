@@ -56,14 +56,15 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="logo">tweeter</span>
-      <div class="new-tweet-button">
+      <a class="new-tweet-button" href="#">
         <span><strong>Write</strong> a new Tweet</span>
         <i class="fas fa-angle-double-down"></i>
-      </div>
+      </a>
     </nav>
     <div class="spacer"></div>
     <div class="tweeter-body">
       <!-- Page-specific (main) content here -->
+      <a href="" id="form"></a>
       <header class="profile">
         <div class="profile-container">
           <img src="/images/profile-hex.png" class="profile--photo" />
@@ -76,9 +77,8 @@
 
       <main class="container">
         <section class="new-tweet">
-          <h2>Compose Tweet</h2>
           <form method="post" action="/tweets/" class="tweet--form">
-            <label>What are you humming about?</label>
+            <label id="form">What are you humming about?</label>
             <textarea
               name="text"
               id="tweet-text"

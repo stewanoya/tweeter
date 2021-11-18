@@ -3,14 +3,12 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+//function to esacpe html in tweet form
 const escape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
-
-const errorMsg = `<h4 class="error">❌ Error! People can't read an empty tweet! ❌</h4>`;
-const errorMsgLong = `<h4 class="error">❌ Error! Your tweet is too long. Keep it short and sweet, bub. ❌</h4>`;
 
 $(document).ready(function () {
   //renders tweets in db
@@ -18,11 +16,12 @@ $(document).ready(function () {
   //form submission function
   $(".tweet--form").submit((e) => {
     e.preventDefault();
-    let tweetText = $("#tweet-text").val();
-    let serialVal = $("#tweet-text").serialize();
+    const errorMsg = `<h4 class="error">❌ Error! People can't read an empty tweet! ❌</h4>`;
+    const errorMsgLong = `<h4 class="error">❌ Error! Your tweet is too long. Keep it short and sweet, bub. ❌</h4>`;
+    const tweetText = $("#tweet-text").val();
+    const serialVal = $("#tweet-text").serialize();
     if (!tweetText) {
       $(".error").remove();
-      //they wanted me to use an alert, but mentioned I would change it later. Going to leave this for now
       $(".tweet--form").prepend(errorMsg);
     } else if (tweetText.length > 140) {
       $(".error").remove();
@@ -32,6 +31,7 @@ $(document).ready(function () {
       $(".error").remove();
       $.post("/tweets/", serialVal).then(() => {
         loadTweets();
+        $("#tweet-text").val("");
       });
     }
   });
@@ -43,6 +43,7 @@ const loadTweets = () => {
   });
 };
 
+//empties current loaded tweets and loops through all tweets to create them.
 const renderTweets = (arrOfTweets) => {
   $(".all-tweets").empty();
   for (tweet of arrOfTweets) {
@@ -50,6 +51,7 @@ const renderTweets = (arrOfTweets) => {
   }
 };
 
+//Using string template to inject HTML
 const createTweetElement = (obj) => {
   const tweetTemplate = `<article class="tweet-container">
   <header class="tweet-header">
