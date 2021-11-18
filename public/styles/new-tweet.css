@@ -1,0 +1,80 @@
+section.new-tweet {
+  text-align: left;
+  min-width: 70%;
+  max-width: 80%;
+}
+
+section.new-tweet > h2 {
+  text-align: center;
+  position: relative;
+}
+
+textarea {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  border-bottom: 0.15em solid black;
+  width: 100%;
+  resize: none;
+  box-shadow: none;
+  height: 1.8em;
+}
+
+textarea:focus {
+  outline: none;
+}
+.counter-button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+button.tweet-submit {
+  background-color: #4056a1;
+  font-family: "Bungee", sans-serif;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+button.tweet-submit:hover {
+  background-color: #8296d4;
+}
+
+.counter {
+  font-family: "Bungee", sans-serif;
+}
+
+article.tweet-container {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.error {
+  /* for Vasily and his love of Salmon */
+  display: flex;
+  height: 3em;
+  font-size: 1em;
+  text-align: center;
+  color: salmon;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid salmon;
+}
+
+/* handling animation  */
+.error {
+  animation-duration: 0.5s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    height: 0em;
+  }
+
+  to {
+    height: 3em;
+  }
+}
