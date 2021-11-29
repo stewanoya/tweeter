@@ -1,13 +1,19 @@
 $(document).ready(function () {
-  charCounter();
+  charCounter(0);
+  $(".tweet--form").submit((e) => {
+    e.preventDefault();
+    $(".counter").replaceWith(
+      `<output name="counter" class="counter" for="tweet-text">${140}</output>`
+    );
+  });
 });
 
-const charCounter = () => {
+const charCounter = (char) => {
   // will collect current counter
   const charCount = $(".counter").text();
 
   //will check how many characters are in textarea
-  let tweetLength = 0;
+  let tweetLength = char;
 
   //a variable to check if it's negative
   let total;
